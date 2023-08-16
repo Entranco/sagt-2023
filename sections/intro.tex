@@ -1,40 +1,14 @@
 %{\setbeamercolor{background canvas}{bg=felix_bg}
-\begin{frame}[t]
-	\frametitle{Complexity}
-		Can we determine if a problem with $n$ items is poly-time solvable?
-		\vspace{1.0cm}
-		\begin{itemize}
-			\item An $n^{O(1)}$ algorithm: Problem is solved!
-			\vspace{1.0cm}
-			\item NP-Hard: Not poly-time solvable assuming $P \neq NP$.
-		\end{itemize}
-\end{frame}
 
 \begin{frame}[t]
 	\frametitle{Parameterized Complexity}
-	What if our problem has an additional parameter $k$ s.t. $n >> k$?
+	What if our problem considers an additional parameter $k$ s.t. $n >> k$?
 	\vspace{1.0cm}
 	\begin{itemize}
 		\item FPT: There exists an algorithm that runs in $O(f(k)n^{O(1)})$ time.
 		\vspace{1.0cm}
 		\item W[1]-Hard: No FPT algorithm exists assuming $FPT \neq XP$.
-		\vspace{1.0cm}
-		\item XP: There exists an algorithm that runs in $O(n^{f(k)})$ time.
 	\end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-	\frametitle{Gerrymandering in Practice}
-	% Note: some image here going from a few states in the US to an actual graph.
-	Gerrymandering is the process of manipulating districts in an election in order for a desired candidate to win.
-	\vspace{0.5em}
-
-			\begin{figure}
-				\begin{center}
-					\includegraphics[scale=0.275]{figures/ut_gm.pdf}
-				\end{center}
-			\end{figure}
-			{\let\thefootnote\relax\footnote{{Source: redistricting.lls.edu}}}
 \end{frame}
 
 \begin{frame}[t]
@@ -47,8 +21,7 @@
 	\onslide<2> {
 			\begin{figure}
 				\begin{center}
-					\includegraphics[scale=0.15]{figures/ut.jpg}
-					\input{figures/ut_graph.tikz}
+					\input{figures/gerrymandering_example.tikz}
 				\end{center}
 			\end{figure}
 	}
