@@ -1,0 +1,58 @@
+\begin{tikzpicture}
+    \definecolor{yellowgreen}{RGB}{108, 153, 11}
+    \definecolor{turq}{RGB}{17, 130, 126}
+    \tikzstyle{node} = [circle, draw, thick, minimum size=0.7cm]
+	\tikzstyle{edge} = [solid, thick]
+
+    \node (u1) [node] {};
+    \node (u2) [node, left = 0.3cm of u1] {};
+    \node (u3) [node, below = 0.3cm of u1] {};
+
+    \node (i1) [node, above = 0.3cm of u1] {};
+    \node (i2) [node, above = 0.3cm of u2] {};
+
+    \node (c1) [node, right = 0.3cm of u1] {};
+    \node (c2) [node, right = 0.3cm of u3] {};
+    \node (c3) [node, right = 0.3cm of c1] {};
+    \node (c4) [node, right = 0.3cm of c2] {};
+
+    \node (w1) [node, above= 0.3cm of c1] {};
+    \node (w2) [node, above = 0.3cm of w1] {};
+    \node (w3) [node, right = 0.3cm of w1] {};
+    \node (w4) [node, right = 0.3cm of w2] {};
+
+    \node (point2) [above left = 0.2cm and 0.3cm of u2] {};
+    \node (point1) [left = 1.0cm of point2] {};
+
+    \draw[->] (point1) -> (point2);
+
+    \draw[ultra thick, rounded corners, color=skyblue] ($(i2.north west)+(-0.2,0.2)$) rectangle ($(i1.south east)+(0.2, -0.2)$);
+    \draw[ultra thick, rounded corners, color=yellowgreen] ($(w2.north west)+(-0.2,0.2)$) rectangle ($(w3.south east)+(0.2, -0.2)$);
+    \draw[ultra thick, rounded corners, color=yellow] ($(u1.north east)+(0.2,0.2)$) -- ($(u2.north west)+(-0.2, 0.2)$) -- ($(u2.south west)+(-0.2, -0.2)$) -- ($(u1.south west)+(-0.2, -0.2)$) -- ($(u3.south west)+(-0.2, -0.2)$) -- ($(u3.south east)+(0.2, -0.2)$) -- cycle;
+    \draw[ultra thick, rounded corners, color=turq] ($(c1.north west)+(-0.2,0.2)$) rectangle ($(c4.south east)+(0.2, -0.2)$);
+
+    \draw (u1) edge [edge] (i1);
+    \draw (u2) edge [edge] (i2);
+    \draw (u1) edge [edge] (u2);
+    \draw (u1) edge [edge] (u3);
+    \draw (u1) edge [edge] (c1);
+    \draw (u3) edge [edge] (c2);
+    \draw (c1) edge [edge] (w1);
+    \draw (u2) edge [edge] (i2);
+    \draw (c1) edge [edge] (c2);
+    \draw (c1) edge [edge] (c3);
+    \draw (c2) edge [edge] (c4);
+    \draw (c3) edge [edge] (c4);
+    \draw (i1) edge [edge] (w1);
+    \draw (i1) edge [edge] (i2);
+    \draw (w1) edge [edge] (w2);
+    \draw (w1) edge [edge] (w3);
+    \draw (w2) edge [edge] (w4);
+    \draw (w3) edge [edge] (w4);
+    \draw (w3) edge [edge] (c3);
+
+
+
+
+
+\end{tikzpicture}

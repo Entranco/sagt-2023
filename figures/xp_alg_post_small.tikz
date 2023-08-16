@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+    \tikzstyle{node} = [circle, draw, thick, minimum size=0.5cm]
+	\tikzstyle{edge} = [thick]
+
+    \node (p1) [node, ultra thick] {};
+    \node (l) [node, fill=white, above=0.25cm of r] {};
+
+    \node (p2) [node, fill=yellow, left=0.25cm of p1] {};
+    \node (b1) [node, fill=bluegreen, left=0.25cm of p2]  {};
+    \node (b11) [node, fill=white, above left=0.25cm and 0.15cm of b1] {};
+    \node (b12) [node, fill=white, below left=0.25cm and 0.15cm of b1] {};
+
+    \node (b2) [node, fill=white, right=0.3cm of p1] {};
+    \node (b21) [node, fill=white, above right=0.25cm and 0.15cm of b2] {};
+    \node (b22) [node, fill=white, right=0.3cm of b2] {};
+    \node (b23) [node, fill=white, below right=0.25cm and 0.15cm of b2] {};
+
+    \draw (p1) edge [edge] (l);
+    \draw (p2) edge [edge] (b1);
+    \draw (b1) edge [edge] (b11);
+    \draw (b1) edge [edge] (b12);
+
+    \draw (p1) edge [edge] (b2);
+    \draw (b2) edge [edge] (b21);
+    \draw (b2) edge [edge] (b22);
+    \draw (b2) edge [edge] (b23);
+
+    \clip ($(p1)$)circle (0.2275cm);
+    \begin{scope}
+        \fill[orange] ($(p1.south)$) rectangle ($(p1.north) + (-0.25, 0)$);
+        \fill[skyblue] ($(p1.south)$) rectangle ($(p1.north) + (0.25, 0)$);
+    \end{scope}
+
+
+\end{tikzpicture}

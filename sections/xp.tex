@@ -1,0 +1,54 @@
+\begin{frame}
+    \frametitle{Finding an Algorithm: XP w.r.t. $\ell$}
+    We've shown that \gm is W[2]-Hard on trees with $\ell$ leaves with respect to the number of districts $k$.
+    \begin{itemize}
+        \item It is also known that \gm on trees is XP with respect to $k$.
+    \end{itemize}
+    \vspace{1.0cm}
+    
+    Given this, the next natural problem is to find an algorithm to solve \gm on trees that is XP in $\ell$ and FPT in $k$.
+    \begin{itemize}
+        \item i.e. an algorithm that takes $O(n^{f(\ell)}f(k))$ time.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Algorithm Idea}
+    Can we reduce a tree to a set of disjoint paths?
+    \begin{itemize}
+        \onslide<2-9> {
+            \item \color{red}Branch Vertex: \color{black} Each vertex with degree $\geq$ 3.
+            \item Sum of branch vertex degrees is directly correlated to number of leaves.
+        }
+        \onslide<4-9> {
+            \item If we delete edges until all vertices have degree $\leq 2$, we have disjoint paths.
+        }
+    \end{itemize}
+    \begin{figure}
+        \begin{center}
+            \input{figures/branch.tikz}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Algorithm Details: XP in $\ell$, FPT in $k$}
+
+    \begin{figure}
+		\begin{center}
+			\input{figures/xp_alg_pre.tikz}
+		\end{center}
+	\end{figure}
+
+    \begin{figure}
+        \begin{center}
+            \onslide<3-4> {
+                \input{figures/xp_alg_post_large.tikz}
+            }
+            \hspace{2.0cm}
+            \onslide<4> {
+                \input{figures/xp_alg_post_small.tikz}
+            }
+        \end{center}
+    \end{figure}
+\end{frame}

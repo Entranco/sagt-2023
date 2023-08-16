@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+    \tikzstyle{node} = [circle, draw, thick, minimum size = 1.3pt]
+	\tikzstyle{edge} = [thick]
+
+    \node (a1) [node] {};
+    \node (b2) [node, right=2.5cm of a1] {};
+    \node (b3) [node, below=0.5cm of b2] {};
+    \node (b1) [node, above=0.5cm of b2] {};
+    \node (b4) [node, below=0.5cm of b3] {};
+    \node (b5) [node, below=0.5cm of b4] {};
+
+    \draw (a1) edge [edge] (b1);
+    \draw (a1) edge [edge] (b2);
+    \draw (a1) edge [edge] (b3);
+    \draw (a1) edge [edge] (b4);
+    \draw (a1) edge [edge] (b5);
+
+    \onslide<2> {
+        \node (a2) [node, below=1.0cm of a1] {};
+        \draw (a2) edge [edge] (b1);
+        \draw (a2) edge [edge] (b2);
+        \draw (a2) edge [edge] (b3);
+        \draw (a2) edge [edge] (b4);
+        \draw (a2) edge [edge] (b5);
+    }
+
+\end{tikzpicture}

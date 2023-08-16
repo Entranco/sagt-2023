@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+    \tikzstyle{node} = [circle, draw, thick, minimum size=0.5cm]
+	\tikzstyle{edge} = [thick]
+
+    \node (b1) [node, ultra thick]  {};
+
+    \node (l) [node, fill=white, above=0.25cm of r] {};
+
+    \node (b11) [node, fill=white, above left=0.1cm and 0.3cm of b1] {};
+    \node (b12) [node, fill=white, below left=0.1cm and 0.3cm of b1] {};
+
+    \node (b2) [node, fill=white, right=0.3cm of b1] {};
+    \node (b21) [node, fill=white, above right=0.25cm and 0.15cm of b2] {};
+    \node (b22) [node, fill=white, right=0.3cm of b2] {};
+    \node (b23) [node, fill=white, below right=0.25cm and 0.15cm of b2] {};
+
+    \draw (b1) edge [edge] (b11);
+    \draw (b1) edge [edge] (b12);
+    \draw (b1) edge [edge] (l);
+    \draw (b1) edge [edge] (b2);
+
+    \draw (b2) edge [edge] (b21);
+    \draw (b2) edge [edge] (b22);
+    \draw (b2) edge [edge] (b23);
+
+    \clip ($(b1)$)circle (0.2275cm);
+    \begin{scope}
+        \rotatebox{-45}{
+            \fill[orange] ($(b1.north)$) rectangle ($(b1.west)$);
+            \fill[skyblue] ($(b1.north)$) rectangle ($(b1.east)$);
+            \fill[bluegreen] ($(b1.south)$) rectangle ($(b1.west)$);
+            \fill[yellow] ($(b1.south)$) rectangle ($(b1.east)$);
+        }
+    \end{scope}
+\end{tikzpicture}

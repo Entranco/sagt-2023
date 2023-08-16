@@ -1,0 +1,46 @@
+
+% Problem style
+\usepackage{xspace}
+\newcommand{\probname}[1]{\textnormal{\textsc{#1}}\xspace}
+\newcommand{\gm}[0]{\probname{Gerrymandering}}
+\newcommand{\lp}[0]{\probname{$k$-Labeled Path}}
+\newcommand{\scov}[0]{\probname{Set Cover}}
+\newcommand{\wgm}[0]{\probname{Weighted Gerrymandering}}
+
+\DeclareMathOperator*{\argmax} {arg\ max}
+
+% observation
+\newtheorem{observation}{Observation}
+
+% Macros
+\newcommand{\n}{n} % Set Cover n
+\newcommand{\m}{m} % Set Cover m
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Un}{\mathcal{U}}
+\newcommand{\F}{\mathcal{F}}
+
+% problem box
+\newcommand{\problembox} [3] {
+    \noindent
+    \vspace{\dimexpr\parskip+1.35ex}
+    \begin{tikzpicture}
+        \node[draw=black!40, rounded corners, inner sep=2ex] (content) {
+            \begin{tabularx} {\dimexpr\columnwidth-4ex} {l X}
+                \textbf{Input:} & #2\\
+                \textbf{Problem:} & #3\\
+            \end{tabularx}
+        };
+        
+        \node[inner sep=3pt, fill=white, anchor=north west] at ($(content.north west) + (2ex, 1.35ex)$) {\probname{#1}};
+    \end{tikzpicture}
+    \ignorespaces
+}
+
+% colors
+\definecolor{orange}{RGB}{230,159,0}
+\definecolor{skyblue}{RGB}{86,180,233}
+\definecolor{bluegreen}{RGB}{0,158,115}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{blue}{RGB}{0,114,178}
+\definecolor{vermillion}{RGB}{213,94,0}
+\definecolor{redpurple}{RGB}{204,121,167}

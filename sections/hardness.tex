@@ -1,0 +1,160 @@
+\begin{frame}[t]
+    \frametitle{Known Results}
+
+    \begin{itemize}
+		\item
+		Parameter: $k$
+	\end{itemize}
+
+	\vspace{0.5em}
+    \input{figures/k_table.tex}
+        \only<2-3> {
+        \begin{itemize}
+            \item $K_{2,n}$ for $n=5$: \only<3> {One vertex deletion from a star!}
+        \end{itemize}
+        \begin{center}
+        \input{figures/k_2_n.tikz}
+        \end{center}
+    }
+    \onslide<4> {
+    \vspace{0.5em}
+    Our results on trees parameterized by $k$ districts:
+    \begin{itemize}
+        \color{red}
+        \item W[2]-Hard with depth=2
+        \item W[2]-Hard with $\ell$ leaves
+        \item An $O(n^{\ell}f(k))$ algorithm (XP in $\ell$, FPT in $k$)
+    \end{itemize}
+    }
+\end{frame}
+
+\begin{frame}[t]
+    \frametitle{Reducing from...}
+    \problembox{Set Cover}
+    {A set of elements $\Un = \{e_1, \dots, e_n\}$, a family of sets $\F = \{S_1, \dots, S_m\}$, and an integer $t \in \mathbb{N}$.}
+    {Is there a subset $X \subseteq \F$ such that $|X| \leq t$ and $\bigcup_{S \in X} S = \Un$?}
+
+    \begin{figure}
+        \begin{flushleft}
+		\input{figures/set_cover.tikz}
+        \input{figures/set_cover_2.tikz}
+        \end{flushleft}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[t]
+    \frametitle{Reducing From Set Cover to Gerrymandering}
+    \scov is W[2]-Hard with respect to $t$, size of our cover.
+
+    We want to show that \gm is W[2]-Hard with respect to $k$ districts + $\ell$ leaves.
+
+    \vspace{1.0cm}
+    To do this, we must solve \scov using \gm.
+    \begin{itemize}
+        \item Our preferred candidate wins $\leftrightarrow$ we have a set cover
+    \end{itemize}
+    
+    \vspace{1.0cm}
+    Additionally, $k$ and $\ell$ must be bounded by some function of $t$.
+\end{frame}
+
+\begin{frame}[t]
+    \frametitle{W[2]-Hardness In Trees with $\ell$ Leaves}
+
+    \begin{figure}
+		\begin{center}
+			\input{figures/reduction_example_sc.tikz}
+		\end{center}
+	\end{figure}
+
+    \begin{figure}
+		\begin{center}
+			\input{figures/reduction_example_gm.tikz}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{W[2]-Hardness In Trees with $\ell$ Leaves}
+    \begin{itemize}
+        \item Our candidate $p$ wins the root district $\leftrightarrow$ the root district resembles a set cover.
+        %\item Create $t$ branches. For each branch, choosing a district $\rightarrow$ choosing a set.
+        %\item Put $c_1$ and $c_2$ into their own districts.
+        \onslide<2-9> {
+            \item Same example: $|\Un| = 3, |\F| = 3$, $t = 2$ sets to choose.
+        }
+        \onslide<9> {
+            \item Note: $k=t+2$ and $\ell = t+2$. Our parameter translates.
+        }
+    \end{itemize}
+
+    \begin{figure}
+		\begin{center}
+			\input{figures/leaf_hardness_example.tikz}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+% \begin{frame}[t]
+%     \frametitle{Problem to Solve}
+%     \begin{center}
+% 		\resizebox{\textwidth}{!}{
+% 			%\input{figures/evolving_graph.tikz}
+%             \includegraphics[]{figures/Inverse Problem Figure.jpg}
+% 		}
+% 	\end{center}
+
+%     Forward Problem: Given a graph, $\hat{\alpha}$, and $\hat{\omega}$: compute states of the graph for $i=1,2, \dots J$
+    
+%     \vspace{1.0em}
+%     Inverse Problem: Given a graph and $J$ states of the graph: compute $\hat{\alpha}$ and $\hat{\omega}$.
+    
+% \end{frame}
+
+% \begin{frame}[t]
+
+%     \frametitle{Defining the Inverse Problem}
+    
+%     \defproblem{Evolving Graph Model}
+% 	{A graph $G$, $J$ states of the graph $F$, and a matrix $R$ containing the frequencies of each edge in $F$}
+% 	{What mapping on the integers $q$ minimizes $\sum_{v_1,v_2 \in G}R[v_1][v_2](q(v_1) - q(v_2))^2$?}
+
+%     \onslide<2-4> {
+%         Problem: Since $q$ is not differentiable, this problem is intractable.\\
+%         Solution: We relax $q$ to be a vector instead of a function
+%     }
+
+%     \onslide<3-4> {
+%         \vspace{1.2em}
+%         This leads to the form: $q^T\Delta_Rq$.\\
+%         Note: $\Delta_R$ is the Laplacian matrix of $R$
+%     }
+
+%     \onslide<4> {
+%         \vspace{1.2em}
+%         Big problem: $q^T\Delta_Rq$ is a nonlinear (quadratic) inverse problem.
+%     }
+
+% \end{frame}
+
+% \begin{frame}[t]
+%     \frametitle{Solving the Quadratic Inverse Problem}
+
+%     Problem to solve: $q^T\Delta_Rq$
+    
+%     \onslide<2-3>{
+%         \vspace{1.2em}
+%         One solution: eigenanalysis by cases on the matrix $\Delta_R$\\
+%         Runtime: $O(n^3)$\\
+%         By: Grindrod and Higham (2009)
+%     }
+
+%     \onslide<3>{
+%         \vspace{1.2em}
+%         My solution: convert to optimization, perform gradient descent\\
+%         Derivative: $q^T(A + A^T)$\\
+%         Compute the derivative and take a step towards it, then repeat.\\
+%         Runtime: $O(sn^2)$, where $s$ is the number of steps to converge
+%     }
+
+% \end{frame}

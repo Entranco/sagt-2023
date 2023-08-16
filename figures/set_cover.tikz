@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+    \tikzstyle{node} = [scale=1.5];
+
+    \onslide<2-5> {
+
+    \node (U) [node] {$ \Un = \{a, b, c\}, t=2$};
+
+    \node (F) [node, below left=0.5cm and -1.4cm of U] {$\F = $};
+    \node (s1) [node, right=0.5cm of F] {$\{a\}$};
+    \node (s2) [node, right=0.5cm of s1] {$\{a, b\}$};
+    \node (s3) [node, right=0.5cm of s2] {$\{a, c\}$};
+    \node (s4) [node, right=0.5cm of s3] {$\{b\}$};
+    }
+    \onslide<3-5>{
+        \draw[ultra thick, rounded corners, color=green] ($(s3.north west)$) rectangle ($(s3.south east)$);
+        \draw[ultra thick, rounded corners, color=green] ($(s4.north west)$) rectangle ($(s4.south east)$);
+    }
+
+\end{tikzpicture}
