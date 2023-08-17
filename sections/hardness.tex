@@ -8,89 +8,73 @@
 
 	\vspace{0.5em}
     \input{figures/k_table.tex}
-        \only<2-3> {
-        \begin{itemize}
-            \item $K_{2,n}$ for $n=5$: \only<3> {One vertex deletion from a star!}
-        \end{itemize}
-        \begin{center}
-        \input{figures/k_2_n.tikz}
-        \end{center}
-    }
-    \onslide<4> {
-    \vspace{0.5em}
-    Our results on trees parameterized by $k$ districts:
-    \begin{itemize}
-        \color{red}
-        \item W[2]-Hard with depth=2
-        \item W[2]-Hard with $\ell$ leaves
-        \item An $O(n^{\ell}f(k))$ algorithm (XP in $\ell$, FPT in $k$)
-    \end{itemize}
-    }
-\end{frame}
-
-\begin{frame}[t]
-    \frametitle{Reducing from...}
-    \problembox{Set Cover}
-    {A set of elements $\Un = \{e_1, \dots, e_n\}$, a family of sets $\F = \{S_1, \dots, S_m\}$, and an integer $t \in \mathbb{N}$.}
-    {Is there a subset $X \subseteq \F$ such that $|X| \leq t$ and $\bigcup_{S \in X} S = \Un$?}
-
-    \begin{figure}
-        \begin{flushleft}
-		\input{figures/set_cover.tikz}
-        \input{figures/set_cover_2.tikz}
-        \end{flushleft}
-	\end{figure}
 \end{frame}
 
 \begin{frame}[t]
     \frametitle{Reducing From Set Cover to Gerrymandering}
+    \problembox{Set Cover}
+    {A set of elements $\Un = \{e_1, \dots, e_n\}$, a family of sets $\F = \{S_1, \dots, S_m\}$, and an integer $t \in \mathbb{N}$.}
+    {Is there a subset $X \subseteq \F$ such that $|X| \leq t$ and $\bigcup_{S \in X} S = \Un$?}
+    
     \scov is W[2]-Hard with respect to $t$, size of our cover.
 
-    We want to show that \gm is W[2]-Hard with respect to $k$ districts + $\ell$ leaves.
+    We want to show that \gm is W[2]-Hard with respect to $k$ districts.
 
     \vspace{1.0cm}
-    To do this, we must solve \scov using \gm.
+    To do this, we must reduce \scov to \gm.
     \begin{itemize}
         \item Our preferred candidate wins $\leftrightarrow$ we have a set cover
+        \item Additionally, $k$ must be bounded by some function of $t$
     \end{itemize}
-    
-    \vspace{1.0cm}
-    Additionally, $k$ and $\ell$ must be bounded by some function of $t$.
 \end{frame}
 
 \begin{frame}[t]
-    \frametitle{W[2]-Hardness In Trees with $\ell$ Leaves}
+	\frametitle{W[2]-Hardness in Trees}
 
-    \begin{figure}
-		\begin{center}
-			\input{figures/reduction_example_sc.tikz}
-		\end{center}
-	\end{figure}
+	\begin{itemize}
+		\item
+		$S_1 = \{a, b\}$ \hspace{1em}
+		$S_2 = \{b\}$ \hspace{1em}
+		$S_3 = \{c\}$ \hspace{1em}
+		$S_4 = \{a, c\}$
+	\end{itemize}
 
-    \begin{figure}
-		\begin{center}
-			\input{figures/reduction_example_gm.tikz}
-		\end{center}
-	\end{figure}
-\end{frame}
+	\begin{center}
+		\resizebox{\textwidth}{!}{
+			\input{figures/hardness.tikz}
+		}
+	\end{center}
 
-\begin{frame}
-    \frametitle{W[2]-Hardness In Trees with $\ell$ Leaves}
-    \begin{itemize}
-        \item Our candidate $p$ wins the root district $\leftrightarrow$ the root district resembles a set cover.
-        %\item Create $t$ branches. For each branch, choosing a district $\rightarrow$ choosing a set.
-        %\item Put $c_1$ and $c_2$ into their own districts.
-        \onslide<2-9> {
-            \item Same example: $|\Un| = 3, |\F| = 3$, $t = 2$ sets to choose.
-        }
-        \onslide<9> {
-            \item Note: $k=t+2$ and $\ell = t+2$. Our parameter translates.
-        }
-    \end{itemize}
+	\vspace{0.5em}
 
-    \begin{figure}
-		\begin{center}
-			\input{figures/leaf_hardness_example.tikz}
-		\end{center}
-	\end{figure}
+	\begin{itemize}
+		\item
+		\only<1>{
+			Add blue vertices $c$ and $r$, blue is the preferred candidate
+		}
+
+		\only<2>{
+			$\forall S_i \in \mathcal{F}$, add $s_i$ with a unique color ($+m$ colors)
+		}
+
+		\only<3-5>{
+			$\forall e \in \mathcal{U}$, add $d$ vertices with a unique color ($+n$ colors)
+		}
+
+		\only<6-7>{
+			Add weights so $r$ can only win if a set cover is chosen
+		}
+
+		\only<8>{
+			Observation: $c$ must be in its own district
+		}
+
+		\only<9-10>{
+			Observation: other leaves should not be in their own district
+		}
+
+		\only<11>{
+			Set cover $\iff$ remove copy of each element from root district \looseness=-1
+		}
+	\end{itemize}
 \end{frame}
