@@ -1,0 +1,31 @@
+
+\begin{tikzpicture}
+	\tikzstyle{node} = [circle, draw, thick]
+	\tikzstyle{edge} = [thick]
+
+	\node (1) [node, fill=orange] {4};
+	\node (2) [node, fill=orange, right=0.6cm of 1] {2};
+	\node (3) [node, fill=skyblue, right=0.6cm of 2] {5};
+	\node (4) [node, fill=orange, above=0.5cm of 2] {2};
+
+	\node (5) [node, fill=bluegreen, below right=0.45cm and 0.3cm of 3] {3};
+	\node (6) [node, fill=bluegreen, below right=0.5cm and 0.2cm of 1] {1};
+	\node (12) [node, fill=bluegreen, below right=0.5cm and 0.2cm of 5] {7};
+
+	\node (9) [node, fill=skyblue, below left=0.5cm and 0.2cm of 1] {4};
+	\node (10) [node, fill=skyblue, below left=0.5cm and 0.1cm of 9] {2};
+	\node (11) [node, fill=orange, below right=0.5cm and 0.1cm of 9] {5};
+
+	\draw (1) edge [edge] (4);
+	\draw (1) edge [edge] (6);
+	\draw (1) edge [edge] (9);
+	\draw (2) edge [edge] (4);
+	\draw (3) edge [edge] (5);
+	\draw (3) edge [edge] (4);
+
+	\draw (9) edge [edge] (10);
+	\draw (11) edge [edge] (9);
+	\draw (12) edge [edge] (5);
+
+	\tikzstyle{node} = []
+\end{tikzpicture}
