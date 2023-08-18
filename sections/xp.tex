@@ -1,19 +1,56 @@
 \begin{frame}
-    \frametitle{Finding an Algorithm: XP w.r.t. $\ell$}
-    We've shown that \gm is W[2]-Hard on trees with $\ell$ leaves with respect to the number of districts $k$.
-    \begin{itemize}
-        \item It is also known that \gm on trees is XP with respect to $k$.
-    \end{itemize}
-    \vspace{1.0cm}
+    \frametitle{Hardness Results}
+    \begin{theorem}
+        \gm is W[2]-Hard w.r.t. $k$ on trees with depth = 2.
+    \end{theorem}
     
-    Given this, the next natural problem is to find an algorithm to solve \gm on trees that is XP in $\ell$ and FPT in $k$.
-    \begin{itemize}
-        \item i.e. an algorithm that takes $O(n^{f(\ell)}f(k))$ time.
-    \end{itemize}
+    \vspace{1.0cm}
+    \onslide<2-3> {
+    \begin{theorem}
+        \gm is W[2]-Hard w.r.t. $k+\ell$ on trees with $\ell$ leaves.
+    \end{theorem}
+    }
+    
+    \vspace{1.0cm}
+    \onslide<3> {
+        Both of these results also apply when restricted to unit weights (vertices have weight 1).
+    }
+    
 \end{frame}
 
 \begin{frame}
-    \frametitle{Algorithm Details: XP in $\ell$, FPT in $k$}
+    \frametitle{Significance of Unit Weights}
+    \begin{itemize}
+        \item Parameter: k
+    \end{itemize}
+	\input{figures/k_table_no_transition.tex}
+
+    \begin{itemize}
+        \item Parameter: k, with unit weights
+    \end{itemize}
+    \input{figures/k_table_unit_weight.tex}
+\end{frame}
+
+\begin{frame}
+    \frametitle{FPT Results}
+    \begin{theorem}
+        \gm is FPT on trees with a constant number of leaves
+    \end{theorem}
+    
+    \vspace{1.0cm}
+    \onslide<2> {
+        Algorithm strategy:
+        \begin{itemize}
+            \item Use brute force to predetermine all possible districts on a branch
+            \item Repeat this until we have a set of disjoint paths
+            \item Gupta et al. can solve a set of disjoint paths
+        \end{itemize}
+    }
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{FPT Algorithm}
 
     \begin{figure}
 		\begin{center}

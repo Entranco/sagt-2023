@@ -7,7 +7,7 @@
 	\begin{itemize}
 		\item FPT: There exists an algorithm that runs in $O(f(k)n^{O(1)})$ time.
 		\vspace{1.0cm}
-		\item W[1]-Hard: No FPT algorithm exists assuming $FPT \neq XP$.
+		\item W[2]-Hard: No FPT algorithm exists assuming $FPT \neq XP$.
 	\end{itemize}
 \end{frame}
 
@@ -18,13 +18,11 @@
 	{A graph $G = (V,E)$, a set of candidates $C$, a candidate function $\chi: V \rightarrow C$, a weight function $w: V \rightarrow \mathbb{N}$, a preferred candidate $p \in C$, and an integer $k \in \mathbb{N}$.}
 	{Is there a district-partition of $V$ into $k$ districts such that $p$ wins more districts than any other candidate?}
 
-	\onslide<2> {
-			\begin{figure}
-				\begin{center}
-					\input{figures/gerrymandering_example_preview.tikz}
-				\end{center}
-			\end{figure}
-	}
+	\begin{figure}
+		\begin{center}
+			\input{figures/gerrymandering_example_preview.tikz}
+		\end{center}
+	\end{figure}
 \end{frame}
 
 \begin{frame}[t]

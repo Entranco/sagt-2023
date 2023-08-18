@@ -52,6 +52,10 @@
 	}
 
 	\onslide<6->{
+		\draw[ultra thick, rounded corners, color=skyblue] ($(c.north west)+(-0.2,0.2)$) rectangle ($(c.south east)+(0.2,-0.2)$);
+	}
+
+	\onslide<7->{
 		\node (w1) [right=1cm of c2] {$w(v_{e_j}) = 3$};
 		\draw (c2) edge [dotted] (w1);
 
@@ -59,16 +63,12 @@
 		\draw (s4) edge [dotted] (w2);
 	}
 
-	\onslide<7->{
+	\onslide<8->{
 		\node (w3) [right=3cm of r] {$w(r) = 3d - 1 = 5$};
 		\draw (r) edge [dotted] (w3);
 
 		\node (w4) [right=3cm of c] {$w(c) = 1$};
 		\draw (c) edge [dotted] (w4);
-	}
-
-	\onslide<8->{
-		\draw[ultra thick, rounded corners, color=skyblue] ($(c.north west)+(-0.2,0.2)$) rectangle ($(c.south east)+(0.2,-0.2)$);
 	}
 
 	\onslide<9>{
