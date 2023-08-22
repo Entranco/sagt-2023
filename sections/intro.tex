@@ -1,17 +1,6 @@
 %{\setbeamercolor{background canvas}{bg=felix_bg}
 
 \begin{frame}[t]
-	\frametitle{Parameterized Complexity}
-	What if our problem considers an additional parameter $k$ such that $n >> k$?
-	\vspace{1.0cm}
-	\begin{itemize}
-		\item FPT: There exists an algorithm that runs in $O(f(k)n^{O(1)})$ time.
-		\vspace{1.0cm}
-		\item W[2]-Hard: No FPT algorithm exists assuming $FPT \neq XP$.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[t]
 	\frametitle{Defining Gerrymandering}
 	\small
 	\problembox{Gerrymandering}
@@ -40,5 +29,16 @@
 			\item Our candidate $p$ wins twice, others win once. Therefore, this is a YES-instance.
 			\item This instance has $k=4$ districts.
 		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Parameterized Complexity}
+	What if our problem considers an additional parameter $k$ such that $n >> k$?
+	\vspace{1.0cm}
+	\begin{itemize}
+		\item FPT: There exists an algorithm that runs in $O(f(k)n^{O(1)})$ time.
+		\vspace{1.0cm}
+		\item W[2]-Hard: No FPT algorithm exists assuming $FPT \neq XP$.
 	\end{itemize}
 \end{frame}

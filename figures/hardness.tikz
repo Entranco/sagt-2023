@@ -10,12 +10,13 @@
 	\tikzstyle{node} = [circle, draw, thick, minimum size=0.85cm]
 	\tikzstyle{edge} = [thick]
 
-	\node (r) [node, fill=skyblue] {$r$};
-	\node (c) [node, fill=skyblue, above=0.8cm of r] {$c$};
-
-	\draw (c) edge [edge] (r);
-
 	\onslide<2->{
+		\node (r) [node, fill=skyblue] {$r$};
+		\node (c) [node, fill=skyblue, above=0.8cm of r] {$c$};
+		\draw (c) edge [edge] (r);
+	}
+	
+	\onslide<3->{
 		\node (s1) [node, fill=bluegreen, below left=1cm and 2cm of r] {$s_1$};
 		\node (s2) [node, fill=vermillion, below left=1cm and 0.3cm of r] {$s_2$};
 		\node (s3) [node, fill=redpurple, below right=1cm and 0.3cm of r] {$s_3$};
@@ -27,7 +28,7 @@
 		\draw (r) edge [edge] (s4);
 	}
 
-	\onslide<3->{
+	\onslide<4->{
 		\node (a1) [node, fill=yellow, below=0.8cm of s1] {$v_{a_1}$};
 		\node (a2) [node, fill=yellow, below=0.8cm of s4] {$v_{a_2}$};
 
@@ -35,7 +36,7 @@
 		\draw (s4) edge [edge] (a2);
 	}
 
-	\onslide<4->{
+	\onslide<5->{
 		\node (b1) [node, fill=pink, below left=0.8cm and 1cm of s1] {$v_{b_1}$};
 		\node (b2) [node, fill=pink, below=0.8cm of s2] {$v_{b_2}$};
 
@@ -43,7 +44,7 @@
 		\draw (s2) edge [edge] (b2);
 	}
 
-	\onslide<5->{
+	\onslide<6->{
 		\node (c1) [node, fill=lightgray, below=0.8cm of s3] {$v_{c_1}$};
 		\node (c2) [node, fill=lightgray, below right=0.8cm and 1cm of s4] {$v_{c_2}$};
 
@@ -51,11 +52,11 @@
 		\draw (s4) edge [edge] (c2);
 	}
 
-	\onslide<6->{
+	\onslide<7->{
 		\draw[ultra thick, rounded corners, color=skyblue] ($(c.north west)+(-0.2,0.2)$) rectangle ($(c.south east)+(0.2,-0.2)$);
 	}
 
-	\onslide<7->{
+	\onslide<8->{
 		\node (w1) [right=1cm of c2] {$w(v_{e_j}) = 3$};
 		\draw (c2) edge [dotted] (w1);
 
@@ -63,16 +64,12 @@
 		\draw (s4) edge [dotted] (w2);
 	}
 
-	\onslide<8->{
+	\onslide<9->{
 		\node (w3) [right=3cm of r] {$w(r) = 3d - 1 = 5$};
 		\draw (r) edge [dotted] (w3);
 
 		\node (w4) [right=3cm of c] {$w(c) = 1$};
 		\draw (c) edge [dotted] (w4);
-	}
-
-	\onslide<9>{
-		\draw[ultra thick, rounded corners, color=pink] ($(b1.north west)+(-0.2,0.2)$) rectangle ($(b1.south east)+(0.2,-0.2)$);
 	}
 
 	\onslide<10->{

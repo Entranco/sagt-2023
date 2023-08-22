@@ -48,27 +48,30 @@
 
 	\begin{itemize}
 		\item
-		\only<1>{
+		\only<1> {
+			Consider the above set-cover instance with frequency 2
+		}
+		\only<2>{
 			Add blue vertices $c$ and $r$, blue is the preferred candidate
 		}
 
-		\only<2>{
+		\only<3>{
 			$\forall S_i \in \mathcal{F}$, add $s_i$ with a unique color ($+m$ colors)
 		}
 
-		\only<3-5>{
+		\only<4-6>{
 			$\forall e \in \mathcal{U}$, add $d$ vertices with a unique color ($+n$ colors)
 		}
 
-		\only<6>{
+		\only<7>{
 			Observation: $c$ must be in its own district, $r$ must win its district
 		}
 
-		\only<7-8>{
+		\only<8-9>{
 			Add weights so $r$ can only win if a set cover is chosen
 		}
 
-		\only<9-10>{
+		\only<10>{
 			Observation: other leaves should not be in their own district
 		}
 

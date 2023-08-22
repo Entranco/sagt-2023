@@ -3,7 +3,7 @@
 	\tikzstyle{edge} = [thick]
 
     \onslide<1> {
-        \node (r) [node, red, fill=skyblue, ultra thick] {};
+        \node (r) [node, fill=skyblue, ultra thick] {};
     }
     \node (l) [node, fill=white, above=0.25cm of r] {};
 
@@ -24,7 +24,7 @@
 
     \draw (r) edge [edge] (l);
     \onslide<1> {
-        \draw (r) edge [edge, red] (p1);
+        \draw (r) edge [edge] (p1);
     }
     
     \draw (r) edge [edge] (b2);
