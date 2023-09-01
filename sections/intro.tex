@@ -1,10 +1,20 @@
 %{\setbeamercolor{background canvas}{bg=felix_bg}
 
 \begin{frame}[t]
-	\frametitle{Defining Gerrymandering}
+	\frametitle{Gerrymandering}
+
+	\begin{center}
+		\includegraphics[width=\textwidth]{figures/NC_gerrymandering.jpg}
+	\end{center}
+
+	{\let\thefootnote\relax\footnote{{Source: election.princeton.edu}}}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Gerrymandering on Graphs}
 	\small
 	\problembox{Gerrymandering}
-	{A graph $G = (V,E)$, a set of candidates $C$, a candidate function $\chi: V \rightarrow C$, a weight function $w: V \rightarrow \mathbb{N}$, a preferred candidate $p \in C$, and an integer $k \in \mathbb{N}$.}
+	{A graph $G = (V,E)$, a set of candidates $C$, a candidate function $\chi: V \rightarrow C$, a weight function $w: V \rightarrow \mathbb{N}$, \only<1>{a preferred candidate $p \in C$, and an integer $k \in \mathbb{N}$.} \only<2>{\textcolor{red}{a preferred candidate $p \in C$, and an integer $k \in \mathbb{N}$.}}}
 	{Is there a district-partition of $V$ into $k$ districts such that $p$ wins more districts than any other candidate?}
 
 	\begin{figure}
