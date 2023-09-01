@@ -1,7 +1,8 @@
 
 \renewcommand{\arraystretch}{1.5}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\begin{tabularx}{\textwidth}{|c||c|Y|Y|Y|}
+\setlength{\tabcolsep}{5pt}
+\onslide<2>{\setlength{\tabcolsep}{5pt}}
+\begin{tabular}{|c||c|c|c|c|}
 	\hline
 
 	&
@@ -15,26 +16,26 @@
 
 	XP &
 	\cellcolor{white} &
-	\cellcolor{blue} Ito 4.1 &
-	\cellcolor{blue} &
-	\cellcolor{blue} \\
+	\cellcolor{skyblue} Ito &
+	\cellcolor{skyblue} &
+	\cellcolor{skyblue} \\
 
 	\hline
 
 	FPT &
-	\only<2>{\cellcolor{red}} &
-    \only<2>{\cellcolor{red} Fraser 3} &
-	\cellcolor{blue} Gupta 1.2 &
-	\cellcolor{blue} \\
+	\only<2>{\cellcolor{gray}} &
+    \only<2>{\cellcolor{gray}}\only<2>{Fraser} \only<1>{\textcolor{white}{Fraser}} &
+	\cellcolor{skyblue} Gupta &
+	\cellcolor{skyblue} \\
 
 	\hline
 
 	Poly &
-	\cellcolor{gray} &
-	\cellcolor{gray} Ito 3.3 &
-	\cellcolor{gray} Bentert 1 &
-	\cellcolor{blue} Ito 4.2 \\
+	\cellcolor{lightgray} &
+	\cellcolor{lightgray} Ito &
+	\cellcolor{lightgray} Bentert &
+	\cellcolor{skyblue} Ito \\
 
 	\hline
-\end{tabularx}
+\end{tabular}
 \renewcommand{\arraystretch}{1}

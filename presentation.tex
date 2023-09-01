@@ -15,6 +15,12 @@
 \definecolor{felix_text}{HTML}{308f94}
 
 \input{notation.tex}
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/13
+}
 
 \title{Gerrymandering Trees: Parameterized Hardness}
 \author{\textcolor{red}{Andrew Fraser}, Brian Lavallee, Blair D. Sullivan}
