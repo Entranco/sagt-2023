@@ -6,6 +6,13 @@
 	
     \input{figures/k_table.tex}
 	\input{figures/table_legend.tex}
+
+	\onslide<2> {
+		\begin{itemize}
+			\item Is \gm FPT on trees w.r.t. $k$?
+			\item This was the largest remaining gap in knowledge w.r.t. $k$.
+		\end{itemize}
+	}
 \end{frame}
 
 \begin{frame}[t]
@@ -55,19 +62,19 @@
 		}
 
 		\only<3>{
-			$\forall S_i \in \mathcal{F}$, add $s_i$ with a unique color ($+m$ colors)
+			$\forall S_i \in \mathcal{F}$, add $s_i$ with a unique color ($+m$ candidates)
 		}
 
 		\only<4-6>{
-			$\forall e \in \mathcal{U}$, add $d$ vertices with a unique color ($+n$ colors)
+			$\forall e \in \mathcal{U}$, add $d$ vertices with a unique color ($+n$ candidates)
 		}
 
-		\only<7>{
-			Observation: $c$ must be in its own district, $r$ must win its district
-		}
-
-		\only<8-9>{
+		\only<7-8>{
 			Add weights so $r$ can only win if a set cover is chosen
+		}
+
+		\only<9>{
+			Observation: $c$ must be in its own district, $r$ must win its district
 		}
 
 		\only<10>{

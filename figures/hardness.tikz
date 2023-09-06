@@ -14,6 +14,9 @@
 		\node (r) [node, fill=skyblue] {$r$};
 		\node (c) [node, fill=skyblue, above=0.8cm of r] {$c$};
 		\draw (c) edge [edge] (r);
+
+		\node (tassignment) [above left=0.3cm and 4cm of c] {\Large $t=2$ sets};
+		\node (kassignment) [below right=0.2cm and -2.37cm of tassignment] {\Large $k=4$ districts};
 	}
 	
 	\onslide<3->{
@@ -53,10 +56,6 @@
 	}
 
 	\onslide<7->{
-		\draw[ultra thick, rounded corners, color=skyblue] ($(c.north west)+(-0.2,0.2)$) rectangle ($(c.south east)+(0.2,-0.2)$);
-	}
-
-	\onslide<8->{
 		\node (w1) [right=1cm of c2] {$w(v_{e_j}) = 3$};
 		\draw (c2) edge [dotted] (w1);
 
@@ -64,12 +63,16 @@
 		\draw (s4) edge [dotted] (w2);
 	}
 
-	\onslide<9->{
-		\node (w3) [right=3cm of r] {$w(r) = 3d - 1 = 5$};
+	\onslide<8->{
+		\node (w3) [right=3cm of r] {$w(r) = 3f - 1 = 5$};
 		\draw (r) edge [dotted] (w3);
 
 		\node (w4) [right=3cm of c] {$w(c) = 1$};
 		\draw (c) edge [dotted] (w4);
+	}
+
+	\onslide<9->{
+		\draw[ultra thick, rounded corners, color=skyblue] ($(c.north west)+(-0.2,0.2)$) rectangle ($(c.south east)+(0.2,-0.2)$);
 	}
 
 	\onslide<10->{
